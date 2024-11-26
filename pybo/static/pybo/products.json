@@ -1,0 +1,32 @@
+[
+    {
+        "name": "사과",
+        "price": "10,000원",
+        "image": "사과.jpg"
+    },
+    {
+        "name": "배",
+        "price": "15,000원",
+        "image": "배.jpg"
+    },
+    {
+        "name": "감",
+        "price": "8,000원",
+        "image": "감.jpg"
+    },
+    {
+        "name": "귤",
+        "price": "5,000원",
+        "image": "귤.jpg"
+    },
+    {
+        "name": "밤",
+        "price": "7,000원",
+        "image": "밤.jpg"
+    },
+    {
+        "name": "호박",
+        "price": "12,000원",
+        "image": "호박.jpg"
+    }
+]

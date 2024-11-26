@@ -1,0 +1,226 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    overflow-x: hidden;
+}
+
+/* 메인 섹션 */
+main {
+    padding: 20px;
+}
+
+/* 추천 가게 섹션 */
+.recommendation h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: #333;
+}
+
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.carousel {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.3s ease-in-out; /* 이동 애니메이션 */
+}
+
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%;
+}
+
+.left-arrow {
+    left: 10px;
+}
+
+.right-arrow {
+    right: 10px;
+}
+
+
+.store-card {
+    background-color: #fff;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    width: 220px;
+    flex-shrink: 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.store-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+.store-name {
+    margin: 10px 0;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+}
+
+.store-image {
+    width: 100%;
+    height: 150px;
+    background-color: #ccc; /* 기본 배경 */
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.store-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.store-image.placeholder {
+    background-color: #e0e0e0; /* 이미지가 없을 때의 배경색 */
+    color: #666; /* 텍스트 색상 */
+    font-size: 1.2em; /* 텍스트 크기 */
+    font-weight: bold;
+    text-align: center;
+}
+
+.store-image.placeholder span {
+    text-align: center;
+    padding: 0 10px;
+}
+
+/* 팝업 */
+
+.store-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.store-popup.hidden {
+    display: none; /* 숨기기 */
+}
+
+.popup-content {
+    background-color: white;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90%; /* 최대 높이 */
+    overflow-y: auto; /* 스크롤 활성화 */
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+.popup-content img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.popup-content h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+.close-popup {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5em;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #333;
+}
+
+
+/* 추천 시장 섹션 */
+.markets h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+.market-list {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.market-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    width: 300px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.market-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.placeholder {
+    width: 100%;
+    height: 150px;
+    background-color: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    color: #666;
+    border-radius: 10px 10px 0 0;
+}

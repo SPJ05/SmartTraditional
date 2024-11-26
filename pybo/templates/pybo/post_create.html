@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>글 작성하기</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'pybo/게시판.css' %}">
+</head>
+<body>
+    {% include 'pybo/header.html' with page_name='board' %}
+    <main>
+        <h1>글 작성하기</h1>
+        <form method="post">
+            {% csrf_token %}
+            <textarea name="content" rows="10" cols="80" placeholder="내용을 입력하세요"></textarea>
+            <br>
+            <button type="submit">작성 완료</button>
+        </form>
+    </main>
+</body>
+</html>

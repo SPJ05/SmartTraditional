@@ -1,0 +1,42 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'pybo/header.css' %}">
+<div class="top-banner">
+    지금 가입하고, 1만원 할인 쿠폰 받아가세요!
+</div>
+<header>
+    <div class="logo">
+        <a href="{% url 'pybo:home' %}" style="text-decoration: none; color: inherit;">ST</a>
+    </div>
+    <div class="search-bar">
+        <input type="text" placeholder="검색어를 입력해주세요">
+        <button>검색</button>
+    </div>
+    <div class="user-menu">
+        {% if request.user.is_authenticated %}
+            <span>{{ request.user.username }}님 환영합니다!</span>
+            <form method="post" action="{% url 'pybo:logout' %}" style="display: inline;">
+                {% csrf_token %}
+                <button type="submit" style="background: none; border: none; color: inherit; cursor: pointer;">
+                    로그아웃
+                </button>
+            </form>
+        {% else %}
+            <a href="{% url 'pybo:signup' %}">회원가입</a>
+            <a href="{% url 'pybo:login' %}">로그인</a>
+        {% endif %}
+
+    </div>
+</header>
+{% if messages %}
+<div class="messages">
+    {% for message in messages %}
+    <p class="{{ message.tags }}">{{ message }}</p>
+    {% endfor %}
+</div>
+{% endif %}
+<nav class="main-menu">
+    <a href="{% url 'pybo:seasonal' %}" class="{% if page_name == 'seasonal' %}bold{% endif %}">제철 상품</a>
+    <a href="{% url 'pybo:market' %}" class="{% if page_name == 'market' %}bold{% endif %}">시장</a>
+    <a href="{% url 'pybo:fun' %}" class="{% if page_name == 'fun' %}bold{% endif %}">놀거리</a>
+    <a href="{% url 'pybo:board' %}" class="{% if page_name == 'board' %}bold{% endif %}">게시판</a>
+</nav>

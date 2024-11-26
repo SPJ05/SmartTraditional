@@ -1,0 +1,119 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f9f9f9;
+    color: #333333;
+    position: relative;
+    min-height: 100vh;
+}
+
+/* Header 및 네비게이션 관련 스타일 */
+.main-menu a.bold {
+    font-weight: bold;
+    color: #b08968;
+}
+
+/* Main Content */
+main {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+main h1 {
+    font-size: 2.6em;
+    color: #333333;
+    margin-bottom: 40px;
+}
+
+/* 게시판 (Board) */
+.board {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 반응형 그리드 */
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: left;
+}
+
+/* 게시물 카드 스타일 */
+.post {
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.post:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.post h2 {
+    font-size: 1.5em;
+    color: #333333;
+    margin-bottom: 15px;
+}
+
+.post p {
+    color: #666666;
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+
+.post span {
+    font-size: 0.8em;
+    color: #999999;
+}
+
+/* 글 작성 버튼 */
+.write-button {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    padding: 15px 20px;
+    background-color: #b08968;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 50px;
+    font-size: 1em;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    text-decoration: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.write-button:hover {
+    background-color: #a0745e;
+}
+
+.write-button:active {
+    background-color: #8c6348;
+    transform: scale(0.95);
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    main {
+        padding: 20px;
+    }
+
+    .post h2 {
+        font-size: 1.2em;
+    }
+
+    .write-button {
+        bottom: 20px;
+        right: 20px;
+        padding: 10px 15px;
+        font-size: 0.9em;
+    }
+}

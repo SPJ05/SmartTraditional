@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ store.name }} - ST 전통시장</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'pybo/store_detail.css' %}">
+</head>
+<body>
+    {% include 'pybo/header.html' %}
+
+    <main>
+        <div class="store-detail">
+            <!-- 가게 정보 -->
+            <div class="store-header">
+                <img src="{% static 'pybo/' %}{{ store.image }}" alt="{{ store.id }}"
+                     onerror='this.src="{% static "pybo/placeholder.jpg" %}"'>
+                <h1>{{ store.name }}</h1>
+            </div>
+
+            <!-- 메뉴 목록 -->
+            <div class="store-menus">
+                <h2>메뉴 목록</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>메뉴 이름</th>
+                            <th>가격</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for menu in store.menus %}
+                        {% if menu.name and menu.price %} <!-- 메뉴 이름과 가격이 모두 있을 때만 생성 -->
+                        <tr>
+                            <td>
+                                <a href="{% url 'pybo:menu_detail' store_id=store.id menu_name=menu.name %}">
+                                    {{ menu.name }}
+                                </a>
+                            </td>
+                            <td>{{ menu.price }}원</td>
+                        </tr>
+                        {% else %}
+                        <tr>
+                            <td colspan="2">메뉴 정보가 없습니다</td>
+                        </tr>
+                        {% endif %}
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

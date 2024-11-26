@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ST 전통시장 - 제철 상품</title>
+    {% load static %}
+    <!-- CSS 파일 연결 -->
+    <link rel="stylesheet" href="{% static 'pybo/홈화면_제철상품.css' %}">
+</head>
+<body>
+    {% include 'pybo/header.html' with page_name='seasonal' %}
+
+    <main>
+        <h2 style="text-align: center; margin-top: 20px;">제철상품</h2>
+        <div class="product-list" id="product-list">
+            <!-- JSON 데이터에서 상품이 동적으로 추가됩니다 -->
+        </div>
+    </main>
+
+    <!-- JSON 파일 경로와 Static 이미지 경로를 JavaScript에 전달 -->
+    <script>
+        const staticFilePath = "{% static 'pybo/products.json' %}";
+        const staticImagePath = "{% static 'pybo/' %}";
+    </script>
+    <!-- JavaScript 파일 연결 -->
+    <script src="{% static 'pybo/홈화면_제철상품.js' %}"></script>
+</body>
+</html>

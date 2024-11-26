@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ST 전통시장 - 홈화면</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'pybo/홈화면2.css' %}">
+</head>
+<body>
+    {% include 'pybo/header.html' %}
+
+    <main>
+        <!-- 추천 가게 섹션 -->
+        <section class="recommendation">
+            <h2>추천 가게</h2>
+            <div class="carousel-container">
+                <button class="carousel-arrow left-arrow">&lt;</button>
+                <div class="carousel" id="store-carousel">
+                    <!-- 가게 카드가 JavaScript로 추가됩니다 -->
+                </div>
+                <button class="carousel-arrow right-arrow">&gt;</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- 팝업 HTML -->
+    <div id="store-popup" class="store-popup hidden">
+        <div class="popup-content">
+            <button class="close-popup">&times;</button>
+            <div class="popup-image">
+                <img id="popup-store-image" src="#" alt="가게 이미지">
+            </div>
+            <h2 id="popup-store-name"></h2>
+            <div class="popup-menu">
+                <table id="popup-menu-table">
+                    <thead>
+                        <tr>
+                            <th>메뉴 이름</th>
+                            <th>가격</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- JavaScript로 메뉴 항목 추가 -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+
+    <script>
+        const csvPath = "{% static 'pybo/products.csv' %}";
+    </script>
+    <script src="{% static 'pybo/홈화면2.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마이페이지</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'pybo/my_page.css' %}">
+</head>
+<body>
+    {% include 'pybo/header.html' %}
+
+    <main class="my-page-container">
+        <h1>마이페이지</h1>
+        <div class="user-info">
+            <p><strong>사용자 이름:</strong> {{ user.username }}</p>
+            <p><strong>이메일:</strong> {{ user.email }}</p>
+        </div>
+
+        <div class="my-page-links">
+            <a href="{% url 'password_change' %}">비밀번호 변경</a>
+            <a href="{% url 'logout' %}">로그아웃</a>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'pybo/login.css' %}">
+</head>
+<body>
+    {% include 'pybo/header.html' %}
+    <main>
+        <div class="login-container">
+            <h1>로그인</h1>
+            <form method="post">
+                {% csrf_token %}
+                <div>
+                    <label for="id_username">사용자 ID:</label>
+                    <input type="text" name="username" id="id_username" required>
+                </div>
+                <div>
+                    <label for="id_password">비밀번호:</label>
+                    <input type="password" name="password" id="id_password" required>
+                </div>
+                <button type="submit" class="login-button">로그인</button>
+            </form>
+        </div>
+    </main>
+</body>
+</html>

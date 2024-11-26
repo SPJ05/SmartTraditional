@@ -1,0 +1,42 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f4f1;
+    margin: 0;
+    padding: 0;
+}
+
+.my-page-container {
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.my-page-container h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.user-info {
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.my-page-links a {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 10px 15px;
+    background-color: #b08968;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.my-page-links a:hover {
+    background-color: #a0745e;
+}

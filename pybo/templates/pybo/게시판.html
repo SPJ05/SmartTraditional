@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ST 전통시장 - 게시판</title>
+    {% load static %}
+    <!-- CSS 파일 연결 -->
+    <link rel="stylesheet" href="{% static 'pybo/게시판.css' %}">
+</head>
+<body>
+    <!-- Header 포함 -->
+    {% include 'pybo/header.html' with page_name='board' %}
+
+    <main>
+        <h1>게시판</h1>
+        <!-- 게시판 리스트 -->
+        <div class="board" id="board-list">
+            <!-- 게시물 데이터는 JavaScript로 동적으로 추가됩니다 -->
+        </div>
+
+        <!-- 글 작성 버튼 -->
+        <a href="{% url 'pybo:post_create' %}" class="write-button">글 작성하기</a>
+    </main>
+
+    <!-- JavaScript 파일 연결 -->
+    <script src="{% static 'pybo/게시판.js' %}"></script>
+</body>
+</html>

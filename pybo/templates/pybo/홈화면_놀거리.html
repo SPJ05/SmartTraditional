@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ST 전통시장 - 놀거리</title>
+    {% load static %}
+    <!-- CSS 파일 연결 -->
+    <link rel="stylesheet" href="{% static 'pybo/홈화면1.css' %}">
+    <style>
+        a {
+            text-decoration: none;
+            color: #b08968;
+        }
+
+        /* Content section */
+        .content {
+            padding: 20px 60px;
+        }
+
+        .place {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .place img {
+            width: 80px;
+            height: 80px;
+            background-color: #ccc;
+            border-radius: 4px;
+            margin-right: 15px;
+            text-align: center;
+            line-height: 80px;
+            font-size: 16px;
+            color: #fff;
+            object-fit: cover; /* 이미지 비율 유지 */
+        }
+
+        .place-details {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .place-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin: 0;
+            color: #333;
+        }
+
+        .place-address {
+            font-size: 14px;
+            color: #666;
+        }
+        .main-menu a.bold {
+            font-weight: bold;
+            color: #000000; /* 선택한 메뉴 색상 강조 */
+        }
+    </style>
+</head>
+<body>
+    <!-- Header 포함 -->
+    {% include 'pybo/header.html' with page_name='fun' %}
+
+    <!-- Main Content -->
+    <div class="content">
+        <h2 style="text-align: center; margin-bottom: 30px;">포항의 놀거리</h2>
+        <div class="place">
+            <img src="{% static 'pybo/영일대.jpg' %}" alt="영일대 해수욕장 사진"> <!-- 실제 이미지 경로 -->
+            <div class="place-details">
+                <p class="place-title">영일대 해수욕장</p>
+                <p class="place-address">포항시 북구 항구동, 두호동</p>
+            </div>
+        </div>
+        <div class="place">
+            <img src="{% static 'pybo/스페이스워크.jpg' %}" alt="스페이스 워크 사진"> <!-- 실제 이미지 경로 -->
+            <div class="place-details">
+                <p class="place-title">스페이스 워크</p>
+                <p class="place-address">포항시 북구 환호공원길 30</p>
+            </div>
+        </div>
+        <div class="place">
+            <img src="{% static 'pybo/운하.jpg' %}" alt="운하 사진"> <!-- 추가 장소 -->
+            <div class="place-details">
+                <p class="place-title">포항 운하</p>
+                <p class="place-address">포항시 남구 해도동</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
