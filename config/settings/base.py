@@ -29,6 +29,7 @@ SECRET_KEY = 'django-insecure-39kla+k5i)j7y48e+o9dda9e=ae#ci%kysmjrcj+l8&vfo6o-2
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+
 ALLOWED_HOSTS = ['3.39.196.102']
 
 
@@ -123,7 +124,7 @@ STATIC_URL = '/static/'
 
 # 개발 환경에서 사용할 Static 파일 경로 설정
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'pybo', 'static'),
+    BASE_DIR / "pybo" / "static",
 ]
 
 # 배포 환경에서 Static 파일을 모으는 디렉토리 (collectstatic 명령어 사용 시 필요)
